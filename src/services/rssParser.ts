@@ -18,7 +18,7 @@ function parseRSSItem(item: Element, source: string, sourceUrl: string, category
                   new Date().toISOString();
 
   // Try to extract image from various sources
-  let image = item.querySelector('enclosure[type^="image"]')?.getAttribute('url') ||
+  const image = item.querySelector('enclosure[type^="image"]')?.getAttribute('url') ||
               item.querySelector('media\\:content')?.getAttribute('url') ||
               item.querySelector('media\\:thumbnail')?.getAttribute('url') ||
               extractImageFromContent(description);
